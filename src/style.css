@@ -161,11 +161,15 @@ body {
   font-size: 1.8rem;
   font-weight: 700;
   border: 0;
+  outline: none;
   padding: 10px 0;
   background: var(--key);
   border-radius: 10px;
   color: var(--text);
   cursor: pointer;
+}
+.calc-btn:focus {
+  outline: none;
 }
 .rset,
 .eqls {
@@ -180,11 +184,15 @@ body {
 }
 .eqls {
   box-shadow: 0 5px var(--equals-key-shadow);
+  -webkit-box-shadow: 0 5px var(--equals-key-shadow);
+  -moz-box-shadow: 0 5px var(--equals-key-shadow);
   background-color: var(--equals-key);
   color: var(--equals-text);
 }
-.calc-btn:not(.del, .rset, .eqls) {
+.btn {
   box-shadow: 0 5px var(--key-shadow);
+  -webkit-box-shadow: 0 5px var(--key-shadow);
+  -moz-box-shadow: 0 5px var(--key-shadow);
 }
 .calc-btn:active {
   box-shadow: none;
