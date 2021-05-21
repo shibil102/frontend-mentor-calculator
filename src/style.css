@@ -57,7 +57,7 @@ body {
   font-family: "Spartan", sans-serif;
 }
 .container {
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--bg-main);
   display: flex;
   align-items: center;
@@ -201,5 +201,10 @@ body {
 @media (max-width: 500px) {
   .calculator-container {
     width: 350px;
+  }
+}
+@media (max-height: 670px) {
+  .calculator-container {
+    height: 40%;
   }
 }
