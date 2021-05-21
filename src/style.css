@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+:root {
+  --bg-main: hsl(222, 26%, 31%);
+  --bg-keypad: hsl(223, 31%, 20%);
+  --bg-screen: hsl(224, 36%, 15%);
+  --accent-key: hsl(225, 21%, 49%);
+  --accent-key-shadow: hsl(224, 28%, 35%);
+  --equals-key: hsl(6, 63%, 50%);
+  --equals-key-shadow: hsl(6, 70%, 34%);
+  --equals-text: white;
+  --key: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+  --text: hsl(221, 14%, 31%);
+  --attr-text: white;
+  --header-text: white;
+  --num-size: 32px;
+  --bor-rad: 10px;
+}
+:root.theme-two {
+  --bg-main: hsl(0, 0%, 90%);
+  --bg-keypad: hsl(0, 5%, 81%);
+  --bg-screen: hsl(0, 0%, 93%);
+  --accent-key: hsl(185, 42%, 37%);
+  --accent-key-shadow: hsl(185, 58%, 25%);
+  --equals-key: hsl(25, 98%, 40%);
+  --equals-key-shadow: hsl(25, 99%, 27%);
+  --key: hsl(45, 7%, 89%);
+  --key-shadow: hsl(35, 11%, 61%);
+  --text: hsl(60, 10%, 19%);
+  --attr-text: hsl(60, 10%, 19%);
+  --header-text: hsl(60, 10%, 19%);
+}
+
+:root.theme-three {
+  --bg-main: hsl(268, 75%, 9%);
+  --bg-keypad: hsl(268, 71%, 12%);
+  --bg-screen: hsl(268, 71%, 12%);
+  --accent-key: hsl(281, 89%, 26%);
+  --accent-key-shadow: hsl(285, 91%, 52%);
+  --equals-key: hsl(176, 100%, 44%);
+  --equals-key-shadow: hsl(177, 92%, 70%);
+  --equals-text: hsl(198, 20%, 13%);
+  --key: hsl(268, 47%, 21%);
+  --key-shadow: hsl(290, 70%, 36%);
+  --text: hsl(52, 100%, 62%);
+  --attr-text: hsl(52, 100%, 62%);
+  --header-text: hsl(52, 100%, 62%);
+}
+*:after,
+*:before,
+* {
+  margin: 0;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+.container {
+  height: 100vh;
+  background-color: var(--bg-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calculator-container {
+  min-height: 60%;
+  width: 500px;
+  /* border: 1px solid red; */
+}
+.header {
+  /* border: 1px solid yellow; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+.header-logo {
+  font-size: 2rem;
+  color: var(--header-text);
+}
+.theme-switchers {
+  display: flex;
+  align-items: flex-end;
+}
+.theme-title {
+  color: var(--header-text);
+  padding: 0 30px 0 0;
+}
+.themes-count {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--header-text);
+  font-size: 0.7rem;
+  padding-bottom: 10px;
+}
+.themetoggler {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+}
+.theme-btn {
+  width: 25px;
+  height: 25px;
+  background: var(--bg-keypad);
+}
+.btn-1 {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.btn-3 {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.indicator {
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  background-color: var(--equals-key);
+  border-radius: 50%;
+  top: 3px;
+  left: 4px;
+  transition: 0.2s linear;
+}
+.screen {
+  margin-top: 2em;
+  width: 100%;
+  height: 100px;
+  background: var(--bg-screen);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.screen-viewer {
+  border: none;
+  outline: none;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--header-text);
+  background: transparent;
+  width: 80%;
+  height: 80%;
+}
+.buttons {
+  /* small spacing within our container */
+  padding: 20px;
+  margin-top: 1em;
+  background-color: var(--bg-keypad);
+  border-radius: 20px;
+  grid-gap: 20px;
+
+  /* the grid stuff! */
+  display: grid;
+
+  /* create 4 columns */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.calc-btn {
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: 0;
+  padding: 10px 0;
+  background: var(--key);
+  border-radius: 10px;
+  color: var(--text);
+  cursor: pointer;
+}
+.rset,
+.eqls {
+  grid-column: span 2;
+}
+
+.del,
+.rset {
+  box-shadow: 0 5px var(--accent-key-shadow);
+  background-color: var(--accent-key);
+  color: var(--header-text);
+}
+.eqls {
+  box-shadow: 0 5px var(--equals-key-shadow);
+  background-color: var(--equals-key);
+  color: var(--equals-text);
+}
+.calc-btn:not(.del, .rset, .eqls) {
+  box-shadow: 0 5px var(--key-shadow);
+}
+.calc-btn:active {
+  box-shadow: none;
+  transform: scale(0.9);
+}
+@media (max-width: 500px) {
+  .calculator-container {
+    width: 350px;
+  }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="theme-two" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calc.io</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!--header-->
+      <div class="calculator-container">
+        <div class="header">
+          <div class="header-logo">calc</div>
+          <div class="theme-switchers">
+            <div class="theme-title">Theme</div>
+            <div class="switcher">
+              <div class="themes-count">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+              </div>
+              <div class="themetoggler">
+                <span class="indicator" id="indicator"></span>
+                <div
+                  class="theme-btn btn-1"
+                  onclick="changeTheme('theme-one')"
+                ></div>
+                <div
+                  class="theme-btn btn-2"
+                  onclick="changeTheme('theme-two')"
+                ></div>
+                <div
+                  class="theme-btn btn-3"
+                  onclick="changeTheme('theme-three')"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--screen-->
+        <div class="screen">
+          <input
+            type="number"
+            dir="rtl"
+            id="screen-viewer"
+            class="screen-viewer"
+            disabled="true"
+            value="10000"
+          />
+        </div>
+        <!--buttons-->
+        <div class="buttons">
+          <button class="calc-btn">7</button>
+          <button class="calc-btn">8</button>
+          <button class="calc-btn">9</button>
+          <button class="calc-btn del">DEL</button>
+
+          <button class="calc-btn">4</button>
+          <button class="calc-btn">5</button>
+          <button class="calc-btn">6</button>
+          <button class="calc-btn">+</button>
+
+          <button class="calc-btn">1</button>
+          <button class="calc-btn">2</button>
+          <button class="calc-btn">3</button>
+          <button class="calc-btn">-</button>
+
+          <button class="calc-btn">.</button>
+          <button class="calc-btn">0</button>
+          <button class="calc-btn">/</button>
+          <button class="calc-btn">x</button>
+
+          <button class="calc-btn rset">RESET</button>
+          <button class="calc-btn eqls">=</button>
+        </div>
+      </div>
+    </div>
+    <script src="./src/script.js"></script>
+  </body>
+</html>
