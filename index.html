@@ -45,38 +45,41 @@
         <!--screen-->
         <div class="screen">
           <input
-            type="number"
+            type="text"
             dir="rtl"
             id="screen-viewer"
             class="screen-viewer"
-            disabled
             value="20"
           />
         </div>
         <!--buttons-->
         <div class="buttons">
-          <button class="calc-btn btn">7</button>
-          <button class="calc-btn btn">8</button>
-          <button class="calc-btn btn">9</button>
-          <button class="calc-btn del">DEL</button>
+          <button class="calc-btn btn" onclick="btnClicked('7')">7</button>
+          <button class="calc-btn btn" onclick="btnClicked('8')">8</button>
+          <button class="calc-btn btn" onclick="btnClicked('9')">9</button>
+          <button class="calc-btn del" onclick="delBtnClicked()">DEL</button>
 
-          <button class="calc-btn btn">4</button>
-          <button class="calc-btn btn">5</button>
-          <button class="calc-btn btn">6</button>
-          <button class="calc-btn btn">+</button>
+          <button class="calc-btn btn" onclick="btnClicked('4')">4</button>
+          <button class="calc-btn btn" onclick="btnClicked('5')">5</button>
+          <button class="calc-btn btn" onclick="btnClicked('6')">6</button>
+          <button class="calc-btn btn" onclick="btnClicked('+')">+</button>
 
-          <button class="calc-btn btn">1</button>
-          <button class="calc-btn btn">2</button>
-          <button class="calc-btn btn">3</button>
-          <button class="calc-btn btn">-</button>
+          <button class="calc-btn btn" onclick="btnClicked('1')">1</button>
+          <button class="calc-btn btn" onclick="btnClicked('2')">2</button>
+          <button class="calc-btn btn" onclick="btnClicked('3')">3</button>
+          <button class="calc-btn btn" onclick="btnClicked('-')">-</button>
 
-          <button class="calc-btn btn">.</button>
-          <button class="calc-btn btn">0</button>
-          <button class="calc-btn btn">/</button>
-          <button class="calc-btn btn">x</button>
+          <button class="calc-btn btn" id="dot" onclick="btnClicked('.')">
+            .
+          </button>
+          <button class="calc-btn btn" onclick="btnClicked('0')">0</button>
+          <button class="calc-btn btn" onclick="btnClicked('/')">/</button>
+          <button class="calc-btn btn" onclick="btnClicked('*')">*</button>
 
-          <button class="calc-btn rset">RESET</button>
-          <button class="calc-btn eqls">=</button>
+          <button class="calc-btn rset" onclick="resetBtnClicked()">
+            RESET
+          </button>
+          <button class="calc-btn eqls" onclick="equalBtnClick()">=</button>
         </div>
       </div>
     </div>
